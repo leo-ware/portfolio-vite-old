@@ -8,6 +8,7 @@ position: relative;
 width: 100%;
 height: 100%;
 padding: 0 2%;
+background-color: white;
 
 display: flex;
 justify-content: space-between;
@@ -16,7 +17,7 @@ align-items: center;
 
 const LinkContainer = styled.div`
     font-size: 20px;
-    padding: 0 20px;
+    padding: 5px 20px;
 `
 
 const NavbarLinksContainer = styled.div`
@@ -57,11 +58,13 @@ const DropDownContainer = styled.div`
     transition: top 0.2s ease-in-out;
     width: 100%;
     z-index: 0;
+    border-bottom: 1px solid black;
+    // background-color: white;
 `
 
 const Navbar: React.FC<{display: boolean}> = ({display}) => {
     const [open, setOpen] = useState(false)
-    const ddTop = open ? 0 : -90
+    const ddTop = open ? 0 : -120
 
     useEffect(() => {
         if (!display) {

@@ -5,11 +5,24 @@ import Layout from "../components/Layout"
 import SocialLinks from "../components/SocialLinks"
 import MeBig from "../assets/me-sitting.png"
 
-const TextContainer = styled.div`
+const ImgContainer = styled.div`
 height: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-items: flex-end;
+`
+
+const TextContainer = styled.div`
+height: 100%;
+display: flex;
+flex-direction: column;
+padding-top: 25px;
+
+@media (min-width: 600px) {
+    justify-content: center;
+    margin-left: 35px;
+}
 `
 
 const BigImg = styled.img`
@@ -19,13 +32,13 @@ const BigImg = styled.img`
 const About: React.FC = () => {
     return (
         <Layout childrenLeft={
-            <TextContainer style={{alignItems: "flex-end"}}>
+            <ImgContainer>
                 <BigImg src={MeBig}/>
-            </TextContainer>
+            </ImgContainer>
         }>
-            <TextContainer style={{marginLeft: 35, paddingTop: 25}}> 
+            <TextContainer> 
                 <h1>Hi, I'm Leo</h1>
-                <p style={{width: 350}}>
+                <p style={{maxWidth: 350}}>
                     I make computers do interesting things.
                     Check out my work on my projects page, or 
                     reach out below.

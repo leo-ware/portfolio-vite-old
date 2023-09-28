@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Navbar from './Navbar'
+import { HideMobile } from './Responsive'
 
 const Container = styled.div`
 position: relative;
@@ -26,7 +27,7 @@ width: 100%;
 padding: 70px 15%;
 `
 
-const ContentLeft = styled.div`
+const ContentLeft = styled(HideMobile)`
 flex-grow: 1;
 flex-basis: 0;
 `
@@ -62,9 +63,10 @@ const Layout: React.FC<{ children: React.ReactNode, childrenLeft?: React.ReactNo
                 <Navbar display={showNav}/>
             </NavbarContainer>
             <ContentOuter>
-                {childrenLeft && <ContentLeft>
-                    {childrenLeft}
-                </ContentLeft>}
+                {childrenLeft && 
+                    <ContentLeft>
+                        {childrenLeft}
+                    </ContentLeft>}
                 <ContentInner>
                     {children}
                 </ContentInner>
