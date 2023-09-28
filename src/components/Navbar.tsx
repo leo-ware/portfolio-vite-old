@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+
 import { HideMobile, HideDesktop } from './Responsive'
 // import { Link } from 'react-router-dom'
 
@@ -15,9 +17,11 @@ justify-content: space-between;
 align-items: center;
 `
 
-const LinkContainer = styled.div`
+const LinkContainer = styled(Link)`
     font-size: 20px;
     padding: 5px 20px;
+    color: black;
+    text-decoration: none;
 `
 
 const NavbarLinksContainer = styled.div`
@@ -29,9 +33,9 @@ const NavbarLinksContainer = styled.div`
 const NavbarLinks: React.FC<{vertical?: boolean}> = ({vertical}) => {
     return (
         <NavbarLinksContainer style={{flexDirection: vertical? "column" : "row"}}>
-            <LinkContainer>About</LinkContainer>
-            <LinkContainer>Projects</LinkContainer>
-            <LinkContainer>CV</LinkContainer>
+            <LinkContainer to='/about'>About</LinkContainer>
+            <LinkContainer to='/projects'>Projects</LinkContainer>
+            <LinkContainer to='/cv'>CV</LinkContainer>
         </NavbarLinksContainer>
     )
 }
@@ -75,7 +79,7 @@ const Navbar: React.FC<{display: boolean}> = ({display}) => {
     return (
         <>
             <Container style={{zIndex: 1}} onResize={console.log}>
-                <LinkContainer>Leo Ware</LinkContainer>
+                <LinkContainer to={"/"}>Leo Ware</LinkContainer>
                 <HideMobile>
                     <NavbarLinks/>
                 </HideMobile>

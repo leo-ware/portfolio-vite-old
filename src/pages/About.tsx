@@ -37,7 +37,7 @@ const About: React.FC = () => {
             </ImgContainer>
         }>
             <TextContainer> 
-                <h1>Hi, I'm Leo</h1>
+                <h2>Hi, I'm Leo</h2>
                 <p style={{maxWidth: 350}}>
                     I make computers do interesting things.
                     Check out my work on my projects page, or 
