@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import {Helmet} from 'react-helmet'
 
+import Favicon from '../assets/favicon.png'
 import Navbar from './Navbar'
 import { HideMobile } from './Responsive'
 
@@ -38,7 +40,7 @@ flex-basis: 0;
 padding; 0 10%;
 `
 
-const Layout: React.FC<{ children: React.ReactNode, childrenLeft?: React.ReactNode }> = ({ children, childrenLeft }) => {
+const Layout: React.FC<{ title?: string, children: React.ReactNode, childrenLeft?: React.ReactNode }> = (props) => {
 
     const [showNav, setShowNav] = useState(true)
     const navTop = showNav ? 0 : -85
@@ -59,16 +61,21 @@ const Layout: React.FC<{ children: React.ReactNode, childrenLeft?: React.ReactNo
 
     return (
         <Container onScroll={handleScroll}>
+            <Helmet 
+                title={props.title || ""}
+                link={[
+                    { rel: 'icon', type: 'image/png', href: "public/favicon.png" }
+                ]}/>
             <NavbarContainer style={{top: navTop}}>
                 <Navbar display={showNav}/>
             </NavbarContainer>
             <ContentOuter>
-                {childrenLeft && 
+                {props.childrenLeft && 
                     <ContentLeft>
-                        {childrenLeft}
+                        {props.childrenLeft}
                     </ContentLeft>}
                 <ContentInner>
-                    {children}
+                    {props.children}
                 </ContentInner>
             </ContentOuter>
         </Container>
