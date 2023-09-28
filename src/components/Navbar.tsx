@@ -7,7 +7,7 @@ const Container = styled.div`
 position: relative;
 width: 100%;
 height: 100%;
-background-color: red;
+padding: 0 2%;
 
 display: flex;
 justify-content: space-between;
@@ -56,7 +56,6 @@ const DropDownContainer = styled.div`
     top: 0;
     transition: top 0.2s ease-in-out;
     width: 100%;
-    background-color: blue;
     z-index: 0;
 `
 
