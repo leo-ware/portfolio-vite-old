@@ -50,6 +50,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const navTop = showNav ? 0 : -85
     const prevScrollY = React.createRef<number>()
 
+    // still has annoying behavior when you scroll up slowly
     const handleScroll: React.UIEventHandler<HTMLDivElement> = (e) => {
         const currentScrollY = e.currentTarget.scrollTop
         const scrollingUp = prevScrollY.current && prevScrollY.current >= currentScrollY
