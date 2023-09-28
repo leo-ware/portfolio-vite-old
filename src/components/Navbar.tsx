@@ -12,6 +12,8 @@ height: 100%;
 padding: 0 2%;
 background-color: white;
 
+font-weight: 600;
+
 display: flex;
 justify-content: space-between;
 align-items: center;
