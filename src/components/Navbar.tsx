@@ -65,7 +65,7 @@ const DropDownContainer = styled.div`
     width: 100%;
     z-index: 0;
     border-bottom: 1px solid black;
-    // background-color: white;
+    background-color: white;
 `
 
 const Navbar: React.FC<{display: boolean}> = ({display}) => {

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import {Helmet} from 'react-helmet'
 
-import Favicon from '../assets/favicon.png'
 import Navbar from './Navbar'
 import { HideMobile } from './Responsive'
 
