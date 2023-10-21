@@ -26,6 +26,9 @@ display: flex;
 min-height: 100%;
 width: 100%;
 padding: 70px 15%;
+@media (max-width: 1050px) {
+    padding: 70px 5%;
+}
 `
 
 const ContentLeft = styled(HideMobile)`

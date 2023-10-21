@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 import Layout from "../components/Layout"
@@ -38,10 +39,10 @@ const About: React.FC = () => {
         }>
             <TextContainer> 
                 <h2>Hi, I'm Leo</h2>
-                <p style={{maxWidth: 350}}>
-                    I make computers do interesting things.
-                    Check out my work on my projects page, or 
-                    reach out below.
+                <p style={{maxWidth: 400}}>
+                    I just graduated from Minerva University with a BSc in Data Science.
+                    I'm interested in causal inference and interface design.
+                    Check out my <Link to={"/projects"}>projects</Link> or reach out below.
                 </p>
                 <SocialLinks/>
             </TextContainer>
