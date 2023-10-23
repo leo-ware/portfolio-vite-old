@@ -1,4 +1,4 @@
-import styled from "styled-components"
+// import styled from "styled-components"
 
 import Layout from "../../components/Layout"
 import { HeaderContainerLeft } from "../../components/Text"
@@ -6,7 +6,7 @@ import FeatureCard from "../../components/FeatureCard"
 import CodeBlock from "../../components/CodeBlock"
 
 import FDViz from "../../assets/frontdoor_viz.png"
-import TOC from "../../components/TOC"
+// import TOC from "../../components/TOC"
 
 const Modeling = () => {
     const code = `
@@ -89,9 +89,9 @@ estimator.estimate(estimand)
     )
 }
 
-const TOCContainer = styled.div`
-    padding-top: 200px;
-`
+// const TOCContainer = styled.div`
+//     padding-top: 200px;
+// `
 
 const PQP = () => {
     return (

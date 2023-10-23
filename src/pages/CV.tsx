@@ -1,15 +1,15 @@
-import styled from "styled-components"
+// import styled from "styled-components"
 
 import Resume from "../assets/Resume.pdf"
 import Layout from "../components/Layout"
 import { HeaderContainer } from "../components/Text"
 
-const CVContainer = styled.iframe`
-    width: 100%;
-    height: 100%;
-    // border: none;
-    margin-bottom: 50px;
-`
+// const CVContainer = styled.iframe`
+//     width: 100%;
+//     height: 100%;
+//     // border: none;
+//     margin-bottom: 50px;
+// `
 
 const CV = () => {
     return (
