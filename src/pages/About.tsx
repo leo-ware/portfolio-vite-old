@@ -40,7 +40,7 @@ const About: React.FC = () => {
             <TextContainer> 
                 <h2>Hi, I'm Leo</h2>
                 <p style={{maxWidth: 400}}>
-                    I just graduated from Minerva University with a BSc in Data Science.
+                    I'm a senior studying Data Science at Minerva University.
                     I'm interested in causal inference and interface design.
                     Check out my <Link to={"/projects"}>projects</Link> or reach out below.
                 </p>

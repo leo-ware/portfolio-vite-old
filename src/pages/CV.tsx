@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+import Resume from "../assets/Resume.pdf"
 import Layout from "../components/Layout"
 import { HeaderContainer } from "../components/Text"
 
@@ -16,9 +17,7 @@ const CV = () => {
             <HeaderContainer>
                 <h1>Resume</h1>
             </HeaderContainer>
-            <CVContainer
-                src="https://docs.google.com/document/d/e/2PACX-1vTxat0c8TgU7KZBskcBbYeLCd4e4JG9UgoSPd8JU4_M0PcVBfqj1sWBqG9V7_Owre75HqsLmYEji3Oy/pub?embedded=true"
-                />
+            <object data={Resume} type="application/pdf" width="100%" height="100%"/>
         </Layout>
     )
 }

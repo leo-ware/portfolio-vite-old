@@ -10,3 +10,7 @@ export const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+export const HeaderContainerLeft = styled(HeaderContainer)`
+    justify-content: flex-start;
+`

@@ -21,16 +21,16 @@ const Container = styled.div`
 const SocialLinks: React.FC = () => {
     return (
         <Container>
-            <a href="https://github.com/leo-ware">
+            <a href="https://github.com/leo-ware" target="_blank">
                 <Img src={GH}/>
             </a>
-            <a href="https://www.linkedin.com/in/leo-ware-8b8580b6/">
+            <a href="https://www.linkedin.com/in/leo-ware-8b8580b6/" target="_blank">
                 <Img src={LI}/>
             </a>
-            <a href="https://medium.com/@leoware">
+            <a href="https://medium.com/@leoware" target="_blank">
                 <Img src={MD}/>
             </a>
-            <a href="https://t.me/leoware">
+            <a href="https://t.me/leoware" target="_blank">
                 <Img src={TG}/>
             </a>
         </Container>

@@ -10,6 +10,11 @@ position: relative;
 width: 100vw;
 height: 100vh;
 overflow-x: hidden;
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
 `
 
 const NavbarContainer = styled.div`
