@@ -1,9 +1,10 @@
 // import styled from "styled-components"
 
 import Layout from "../../components/Layout"
-import { HeaderContainerLeft } from "../../components/Text"
+import { HeaderContainer } from "../../components/Text"
 import FeatureCard from "../../components/FeatureCard"
 import CodeBlock from "../../components/CodeBlock"
+import ShrinkContainer from "../../components/ShrinkContainer"
 
 import FDViz from "../../assets/frontdoor_viz.png"
 // import TOC from "../../components/TOC"
@@ -103,34 +104,98 @@ const PQP = () => {
             //     </TOCContainer>
             // }
             >
-            <HeaderContainerLeft>
-                <h1>PQP</h1>
-            </HeaderContainerLeft>
+            <ShrinkContainer>
+                <HeaderContainer>
+                    <h1>PQP</h1>
+                </HeaderContainer>
 
 
-            <p>
-                PQP (short for <em>pourquoi pas?</em>) is an open-source library I built for causal inference on observational datasets.
-                It's designed to be used by data scientists and domain experts who don't have a background
-                in statistics or econometrics, but who want to use the powerful tools being developed at
-                the cutting edge of causal inference research.
-            </p>
+                <p>
+                    PQP (short for <em>pourquoi pas?</em>) is an open-source library I built for causal inference on observational datasets.
+                    It's designed to be used by data scientists and domain experts who don't have a background
+                    in statistics or econometrics, but who want to use the powerful tools being developed at
+                    the cutting edge of causal inference research.
+                </p>
 
-            <br/>
+                <br/>
 
-            <p>
-                What is true of statistics in general is especially true in causal inference: an
-                analysis is no better than its assumptions.
-                PQP takes this seriously by putting assumption-design directly in the hands of the user, abstracting
-                over all other implementation details.
-                Performing a causal analysis with PQP is as simple as specifying the assumptions you're willing to make
-                and the problem you're trying to solve.
-            </p>
+                <p>
+                    What is true of statistics in general is especially true in causal inference: an
+                    analysis is no better than its assumptions.
+                    PQP takes this seriously by putting assumption-design directly in the hands of the user, abstracting
+                    over all other implementation details.
+                    Performing a causal analysis with PQP is as simple as specifying the assumptions you're willing to make
+                    and the problem you're trying to solve.
+                </p>
 
-            <h2>Workflow</h2>            
-            <Modeling/>
-            <Identification/>
-            <Estimation/>
+                <br/>
 
+                <p>
+                    The core algorithms are written in Rust, and the Python API is built on top of PyO3.
+                    You can find the docs <a href="https://leo-ware.github.io/pqp/">here</a>.
+                </p>
+
+                <h2>Workflow</h2>            
+                <Modeling/>
+                <br/>
+                <Identification/>
+                <br/>
+                <Estimation/>
+
+                <h2>Conceptual Guide</h2>
+
+                <p>
+                    Measuring a causal effect fundamentally requires three things: a set of assumptions about the causal structure
+                    of the data generating process, a parametric model of the joint distribution of the observed variables, and 
+                    a specification of the effect you want to measure (called the causal estimand).
+                    The parametric model can generally be any kind of statistical or machine learning model, as long as it
+                    can explicitly model the joint distribution. It takes special formalisms to represent the causal assumptions
+                    and the causal estimand.
+                </p>
+
+                <br/>
+
+                <p>
+                    The causal assumptions are encoded in a <a href="https://causal-dict.vercel.app/Intro/Causal%20Graphs">graph</a>,
+                    where directed edges indicate possible causal relationships
+                    and undirected edges indicate possible confounding.
+                    The causal estimand is represented using a probability
+                    involving <a href="https://causal-dict.vercel.app/Intro/Do%20Expressions">do-expressions</a>.
+                </p>
+
+                <br/>
+
+                <p>
+                    PQP works through two steps to generate a point estimate of the causal effect.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Identification</strong> is the process of figuring out whether there is enough information in the
+                        datset to estimate the causal effect. Sometimes, it's not possible to disentangle the various ways 
+                        that the variables can interact.
+                        If it's possible to estimate the effect, identification will determine a strategy for doing so, called the statistical estimand.
+                    </li>
+                    <br/>
+                    If it's possible to estimate the effect, identification will determine a strategy for doing so, called the statistical estimand.
+                    Often, this will be a list of variables that you need to control for, but these can sometimes be quite complicated.
+                    
+                    <br/>
+                    <br/>
+
+                    <li>
+                        <strong>Estimation</strong> is the process of using the parametric model and statistical estimand to derive
+                        a point estimate of the causal effect. This problem has exponential time complexity in the number of variables.
+                        Currently, PQP relies on quantizing the data and brute forcing this problem, but numerical estimators are in the works.
+                    </li>
+                </ul>
+
+                <p>
+                    PQP relies on Shpitser's ID algorithm for identification, which is complete and polynomial time.
+                    I.e., it will always succeed in identifying the effect if this is possible with the given information, and it
+                    will do so in a way which is reasonably computationally efficient.
+                </p>
+            </ShrinkContainer>
         </Layout>
     )
 }
