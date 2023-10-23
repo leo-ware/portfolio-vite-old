@@ -86,6 +86,7 @@ const Projects = () => {
                 img={PQPLogo}/>
             <ProjectThumbnail
                 title={"Causal: dict"}
+                slug={"causal-dict"}
                 desc={"A educational resource for learning the key ideas of causal inference."}
                 img={CDLogo}/>
             <ProjectThumbnail

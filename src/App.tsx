@@ -9,6 +9,7 @@ import Projects from './pages/Projects'
 import CV from './pages/CV'
 import NotFound404 from './pages/404'
 import PQP from './pages/projects/PQP'
+import CausalDict from './pages/projects/CausalDict'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         {path: "/", element: <About/>},
         {path: "/about", element: <About/>},
         {path: "/projects/pqp", element: <PQP/>},
+        {path: "/projects/causal-dict", element: <CausalDict/>},
         {path: "/projects", element: <Projects/>},
         {path: "/cv", element: <CV/>},
         {path: "*", element: <NotFound404/>}
