@@ -5,10 +5,10 @@ import GH from '../assets/gh_bw.png'
 import LI from '../assets/li_bw.png'
 import MD from '../assets/md_bw.png'
 import TG from '../assets/tg_bw.png'
+import ImageFadeIn from "./ImageFadeIn"
 
-const Img = styled.img`
-    width: 30px;
-    height: 30px;
+const ImgContainer = styled.div`
+    padding: 0;
     margin: 25px 5px;
 `
 
@@ -22,16 +22,24 @@ const SocialLinks: React.FC = () => {
     return (
         <Container>
             <a href="https://github.com/leo-ware" target="_blank">
-                <Img src={GH}/>
+                <ImgContainer>
+                    <ImageFadeIn src={GH} alt={"GitHub Logo"} width={30} height={30}/>
+                </ImgContainer>
             </a>
             <a href="https://www.linkedin.com/in/leo-ware-8b8580b6/" target="_blank">
-                <Img src={LI}/>
+                <ImgContainer>
+                    <ImageFadeIn src={LI} alt={"LinkedIn Logo"} width={30} height={30}/>
+                </ImgContainer>
             </a>
             <a href="https://medium.com/@leoware" target="_blank">
-                <Img src={MD}/>
+                <ImgContainer>
+                    <ImageFadeIn src={MD} alt={"Medium Logo"} width={30} height={30}/>
+                </ImgContainer>
             </a>
             <a href="https://t.me/leoware" target="_blank">
-                <Img src={TG}/>
+                <ImgContainer>
+                    <ImageFadeIn src={TG} alt={"Telegram Logo"} width={30} height={30}/>
+                </ImgContainer>
             </a>
         </Container>
     )

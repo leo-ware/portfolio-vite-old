@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 import SocialLinks from "../components/SocialLinks"
 import MeBig from "../assets/me-sitting.png"
+import ImageFadeIn from "../components/ImageFadeIn"
 
 const ImgContainer = styled.div`
 height: 100%;
@@ -26,15 +27,11 @@ padding-top: 25px;
 }
 `
 
-const BigImg = styled.img`
-    width: 250px;
-`
-
 const About: React.FC = () => {
     return (
         <Layout childrenLeft={
             <ImgContainer>
-                <BigImg src={MeBig}/>
+                <ImageFadeIn src={MeBig} alt={"Me sitting"} width={250} height={430}/>
             </ImgContainer>
         }>
             <TextContainer> 
