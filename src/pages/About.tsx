@@ -40,8 +40,8 @@ const About: React.FC = () => {
             <TextContainer> 
                 <h2>Hi, I'm Leo</h2>
                 <p style={{maxWidth: 400}}>
-                    I'm a senior studying Data Science at Minerva University.
-                    I'm interested in causal inference and interface design.
+                    I'm interested in causal inference and computational statistics.
+                    I'm currently existing in an academic liminal space.
                     Check out my <Link to={"/projects"}>projects</Link> or reach out below.
                 </p>
                 <SocialLinks/>

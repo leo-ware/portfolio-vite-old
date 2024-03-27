@@ -2,10 +2,8 @@
 
 import Layout from "../../components/Layout"
 import { HeaderContainer } from "../../components/Text"
-import { HeaderContainer } from "../../components/Text"
 import FeatureCard from "../../components/FeatureCard"
 import CodeBlock from "../../components/CodeBlock"
-import ShrinkContainer from "../../components/ShrinkContainer"
 import ShrinkContainer from "../../components/ShrinkContainer"
 
 import FDViz from "../../assets/frontdoor_viz.png"

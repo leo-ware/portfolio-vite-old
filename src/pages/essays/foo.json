@@ -1,0 +1,8 @@
+{
+    "title": "Foo",
+    "slug": "foo",
+    "date": "2010-01-01",
+    "tags": ["foo", "bar"],
+    "desc": "This is a test post.",
+    "content": "For some reason, these techniques can feel bullet-proof, but they are not. Each of these techniques rely very heavily on two assumptions: first, that rows are independent, and second, that the goal of the modeling process is generalization rather than extrapolation. Let’s take a look at these assumptions one at a time and see how row-level resampling breaks down when they are violated. \n\n## hello\nFor some reason, these techniques can feel bullet-proof, but they are not. Each of these techniques rely very heavily on two assumptions: first, that rows are independent, and second, that the goal of the modeling process is generalization rather than extrapolation. Let’s take a look at these assumptions one at a time and see how row-level resampling breaks down when they are violated.\n\n# hello\nFor some reason, these techniques can feel bullet-proof, but they are not. Each of these techniques rely very heavily on two assumptions: first, that rows are independent, and second, that the goal of the modeling process is generalization rather than extrapolation. Let’s take a look at these assumptions one at a time and see how row-level resampling breaks down when they are violated. \n\n## hello\nFor some reason, these techniques can feel bullet-proof, but they are not. Each of these techniques rely very heavily on two assumptions: first, that rows are independent, and second, that the goal of the modeling process is generalization rather than extrapolation. Let’s take a look at these assumptions one at a time and see how row-level resampling breaks down when they are violated.\n\n"
+}

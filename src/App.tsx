@@ -10,17 +10,19 @@ import CV from './pages/CV'
 import NotFound404 from './pages/404'
 import PQP from './pages/projects/PQP'
 import CausalDict from './pages/projects/CausalDict'
+import { essayRoutes } from './pages/essays/Essays'
 
 
 function App() {
     const router = createBrowserRouter([
         {path: "/", element: <About/>},
         {path: "/about", element: <About/>},
-        {path: "/projects/pqp", element: <PQP/>},
-        {path: "/projects/causal-dict", element: <CausalDict/>},
+        {path: "/code/pqp", element: <PQP/>},
+        {path: "/code/causal-dict", element: <CausalDict/>},
         {path: "/projects", element: <Projects/>},
         {path: "/cv", element: <CV/>},
-        {path: "*", element: <NotFound404/>}
+        ...essayRoutes,
+        {path: "*", element: <NotFound404/>},
     ])
     return (
         <RouterProvider router={router}/>
