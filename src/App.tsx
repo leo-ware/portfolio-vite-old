@@ -6,7 +6,7 @@ import {
 
 import About from './pages/About'
 import Projects from './pages/Projects'
-import CV from './pages/CV'
+import CV from './pages/CV/CV'
 import NotFound404 from './pages/404'
 import PQP from './pages/projects/PQP'
 import CausalDict from './pages/projects/CausalDict'

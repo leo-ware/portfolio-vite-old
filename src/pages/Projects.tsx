@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import { HeaderContainer } from "../components/Text"
 import { essays } from "./essays/Essays"
 import Tag from "../components/Tag"
+import Section from "../components/Section"
 // import PQPLogo from "../assets/pqp_logo.ico"
 // import CDLogo from "../assets/causaldict_logo.svg"
 // import TGLogo from "../assets/message-square.svg"
@@ -21,27 +22,6 @@ align-items: center;
 const ContentContainerInner = styled.div`
 max-width: 800px;
 width: 800px;
-`
-
-const CategoryContainer = styled.div`
-border-left: 2px solid black;
-margin-bottom: 20px;
-padding-left: 10px;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: flex-start;
-transition: height 0.5s ease;
-`
-
-const CategoryHeader = styled.div`
-width: 100px;
-flex: 0 0 150px;
-`
-
-const CategoryContent = styled.div`
-padding: 0;
-flex-grow: 1;
 `
 
 const CategorySpacer = styled.br`
@@ -109,13 +89,11 @@ type Interesting = {
     tags?: string[],
 }
 
+
+
 const Category: React.FC<{title: string, content: Interesting[], onSelectTag?: (name: string) => void}> = (props) => {
     return (
-        <CategoryContainer>
-            <CategoryHeader>
-                <h3>{props.title}</h3>
-            </CategoryHeader>
-            <CategoryContent>
+        <Section title={props.title}>
                 {props.content.map((item, i) => (
                     <>
                         <ProjectThumbnail
@@ -127,8 +105,7 @@ const Category: React.FC<{title: string, content: Interesting[], onSelectTag?: (
                         {i !== props.content.length - 1 && <CategorySpacer/>}
                     </>
                 ))}
-            </CategoryContent>
-        </CategoryContainer>
+        </Section>
     )
 }
 
