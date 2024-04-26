@@ -13,7 +13,7 @@ const Img = styled.img`
     height: auto;
     object-fit: cover;
     transition: opacity 0.1s;
-    opacity: 0;
+    opacity: 1;
 `
 
 const ImageFadeIn: React.FC<ImageType> = ({ src, alt, width, height}) => {

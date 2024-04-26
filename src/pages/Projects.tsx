@@ -5,11 +5,8 @@ import {Link} from "react-router-dom"
 import Layout from "../components/Layout"
 import { HeaderContainer } from "../components/Text"
 import { essays } from "./essays/Essays"
-import Tag from "../components/Tag"
+// import Tag from "../components/Tag"
 import Section from "../components/Section"
-// import PQPLogo from "../assets/pqp_logo.ico"
-// import CDLogo from "../assets/causaldict_logo.svg"
-// import TGLogo from "../assets/message-square.svg"
 
 
 const ContentContainer = styled.div`
@@ -28,60 +25,6 @@ const CategorySpacer = styled.br`
 height: 20px;
 `
 
-const ThumbnailContainer = styled.div`
-width: 80%;
-// margin-bottom: 20px;
-
-@media (min-width: 800px) {
-    width: 70%;
-    // margin: 15px 15%;
-    max-width: 60vw;
-}
-
-// border-left: 1px solid black;
-@media (min-width: 600px) {
-    height: 80px;
-    // border-left: 2px solid black; 
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    &:hover {
-        color: grey;
-    }
-}
-
-p {
-    margin: 0;
-}
-`
-
-const FilteredTagsContainer = styled.div`
-width: 100%;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-height: 30px;
-margin-bottom: 20px;
-`
-
-const ProjectThumbnail: React.FC<{title: string, desc: string, tags?: string[], slug?: string, onSelectTag?: (name: string) => void}> = (props) => {
-    const linkTo = props.slug || "/404"
-    return (
-        <ThumbnailContainer>
-            <Link to={linkTo}>
-                <h4>{props.title}</h4>
-            </Link> 
-            <p>{props.desc}</p>
-            {/* <p>
-                {(props.tags || []).map(tag => <Tag name={tag} onClick={() => props.onSelectTag && props.onSelectTag(tag)}/>)}
-            </p> */}
-        </ThumbnailContainer>
-    )
-}
-
 type Interesting = {
     title: string,
     desc: string,
@@ -89,21 +32,17 @@ type Interesting = {
     tags?: string[],
 }
 
-
-
 const Category: React.FC<{title: string, content: Interesting[], onSelectTag?: (name: string) => void}> = (props) => {
     return (
         <Section title={props.title}>
                 {props.content.map((item, i) => (
-                    <>
-                        <ProjectThumbnail
-                            title={item.title}
-                            desc={item.desc}
-                            slug={item.slug}
-                            tags={item.tags}
-                            onSelectTag={props.onSelectTag}/>
+                    <div>
+                        <Link to={item.slug}>
+                            <h4>{item.title}</h4>
+                        </Link>
+                        <p>{item.desc}</p>
                         {i !== props.content.length - 1 && <CategorySpacer/>}
-                    </>
+                    </div>
                 ))}
         </Section>
     )
@@ -148,13 +87,13 @@ const Projects = () => {
             <HeaderContainer>
                 <h1>Projects</h1>
             </HeaderContainer>
-            <FilteredTagsContainer>
+            {/* <FilteredTagsContainer>
                 {filteredTags.length > 0 && <>
                     Filters: {filteredTags.map(tag => (
                         <Tag key={tag} name={tag} onRemove={() => onRemoveTag(tag)}/>
                     ))}
                 </>}
-            </FilteredTagsContainer>
+            </FilteredTagsContainer> */}
             <ContentContainer>
                 <ContentContainerInner>
                     {showEssays.length > 0 &&

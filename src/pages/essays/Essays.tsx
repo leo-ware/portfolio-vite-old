@@ -5,6 +5,7 @@ import { fromMarkdown } from "mdast-util-from-markdown"
 import { toc } from "mdast-util-toc"
 import { Nodes } from "mdast"
 import styled from "styled-components"
+import { useEffect } from "react"
 
 const renderMdast = (node: Nodes) => {
     switch (node.type) {
@@ -102,8 +103,11 @@ type Essay = {
     slug: string,
 }
 
+// import bar from './bar.ms?raw'
+
 const EssayRenderer: React.FC<{children: Essay}> = (props) => {
     const tocNode = toc(fromMarkdown(props.children.content), {maxDepth: 2}).map
+    // console.log(bar)
     return (
         <Layout>
             <EssayContainer>
@@ -127,7 +131,7 @@ const EssayRenderer: React.FC<{children: Essay}> = (props) => {
 }
 
 export const essays = ([
-    foo,
+    foo
 ]).map(e => ({...e, slug: "/essays/" + e.slug}))
 
 export const essayRoutes = essays.map((essay) => (

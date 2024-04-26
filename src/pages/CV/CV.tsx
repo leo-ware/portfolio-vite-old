@@ -11,6 +11,7 @@ height: 100%;
 ul {
     font-size: 0.8em;
     margin: 10px;
+    padding-left: 10px;
     // margin-top: 0;
 }
 p {
@@ -19,15 +20,17 @@ p {
 `
 
 const SectionContent = styled.div`
-max-width: 600px;
-margin-left: 8%;
+// max-width: 600px;
+// margin-left: 8%;
 `
 
 const HorizontalContainer = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-max-width: 600px;
+@media (min-width: 400px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 600px;
+}
 `
 
 const Job: React.FC<{job: (typeof cv)["Experience"][0]}> = ({job}) => {
@@ -50,11 +53,19 @@ const Job: React.FC<{job: (typeof cv)["Experience"][0]}> = ({job}) => {
 
 const School: React.FC<{education: (typeof cv)["Education"][0]}> = ({education}) => {
     return (
-        <SectionContent>
-            <h5>{education.Institution}</h5>
-            <p>{education.Degree}</p>
-            <p>{education.Location}</p>
-        </SectionContent>
+        <>
+            <HorizontalContainer>
+                <h5>{education.Institution}</h5>
+                <p>{education.Dates}</p>
+            </HorizontalContainer>
+            <HorizontalContainer>
+                <p>{education.Degree}</p>
+                <p>{education.Location}</p>
+            </HorizontalContainer>
+            <ul>
+                {education.Description.map(d => <li>{d}</li>)}
+            </ul>
+        </>
     )
 }
 
@@ -72,7 +83,9 @@ const CV = () => {
                     {cv.Education.map(e => <School education={e}/>)}
                 </Section>
                 <Section title="Awards">
-                    {cv.Awards.map(a => <p>{a}</p>)}
+                    <SectionContent>
+                        {cv.Awards.map(a => <p style={{fontSize: "0.9em"}}>{a}</p>)}
+                    </SectionContent>
                 </Section>
             </CVContainer>
         </Layout>

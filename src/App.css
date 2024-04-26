@@ -40,6 +40,10 @@ p {
 
 a {
     color: black;
+    text-decoration: none;
+    &:hover {
+        color: grey;
+    }
 }
 
 a:hover {

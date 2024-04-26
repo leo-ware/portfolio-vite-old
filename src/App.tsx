@@ -11,6 +11,7 @@ import NotFound404 from './pages/404'
 import PQP from './pages/projects/PQP'
 import CausalDict from './pages/projects/CausalDict'
 import { essayRoutes } from './pages/essays/Essays'
+import Foo from './pages/Foo'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {path: "/code/causal-dict", element: <CausalDict/>},
         {path: "/projects", element: <Projects/>},
         {path: "/cv", element: <CV/>},
+        {path: "/foo", element: <Foo/>},
         ...essayRoutes,
         {path: "*", element: <NotFound404/>},
     ])
